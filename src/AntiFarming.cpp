@@ -50,6 +50,12 @@ public: AntiFarmingPlayerScript() : PlayerScript("AntiFarmingPlayerScript") {}
         }
 };
 
+AntiFarming* AntiFarming::instance()
+{
+    static AntiFarming instance;
+    return &instance;
+}
+
 void AddAntiFarmingScripts() {
     new AntiFarmingPlayerScript();
     AddSC_antifarming_commandscript();

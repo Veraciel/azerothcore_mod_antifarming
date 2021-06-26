@@ -13,9 +13,10 @@
 
 class AntiFarming {
 public:
+    static AntiFarming* instance();
     typedef std::map<uint64, uint8> antiFarmingData;
     antiFarmingData dataMap;
 };
-#define sAntiFarming ACE_Singleton<AntiFarming, ACE_Null_Mutex>::instance()
+#define sAntiFarming AntiFarming::instance()
 
 #endif
